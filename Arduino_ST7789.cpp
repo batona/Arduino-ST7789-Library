@@ -53,8 +53,8 @@ inline uint16_t swapcolor(uint16_t x) {
 #define SPI_BEGIN_TRANSACTION()    if (_hwSPI)    SPI.beginTransaction(mySPISettings)
 #define SPI_END_TRANSACTION()      if (_hwSPI)    SPI.endTransaction()
 #else
-#define SPI_BEGIN_TRANSACTION()    (void)
-#define SPI_END_TRANSACTION()      (void)
+#define SPI_BEGIN_TRANSACTION()
+#define SPI_END_TRANSACTION()
 #endif
 
 // Constructor when using software SPI.  All output pins are configurable.
