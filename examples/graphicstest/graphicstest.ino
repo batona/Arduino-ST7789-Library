@@ -16,16 +16,25 @@
 //#define TFT_SCLK  13   // for hardware SPI sclk pin (all of available pins)
 
 //stm32duino
+////hardware SPI
+//#define TFT_DC    PA2
+//#define TFT_RST   PA3
+////#define TFT_CS    PA4 // only for displays with CS pin
+//#define TFT_MOSI  PA7   // ==SDA for hardware SPI data pin (all of available pins)
+//#define TFT_SCLK  PA5   // ==SCL for hardware SPI sclk pin (all of available pins)
+
+//software spi
 #define TFT_DC    PA2
-#define TFT_RST   PA3
+#define TFT_RST   PA3 
 //#define TFT_CS    PA4 // only for displays with CS pin
-#define TFT_MOSI  PA7   // ==SDA for hardware SPI data pin (all of available pins)
-#define TFT_SCLK  PA5   // ==SCL for hardware SPI sclk pin (all of available pins)
+#define TFT_MOSI  PA0   // ==SDA for hardware SPI data pin (all of available pins)
+#define TFT_SCLK  PA1   // ==SCL for hardware SPI sclk pin (all of available pins)
 
 //You can use different type of hardware initialization
 //using hardware SPI (11, 13 on UNO; 51, 52 on MEGA; ICSP-4, ICSP-3 on DUE and etc)
 //Arduino_ST7789 tft = Arduino_ST7789(TFT_DC, TFT_RST); //for display without CS pin
 //Arduino_ST7789 tft = Arduino_ST7789(TFT_DC, TFT_RST, TFT_CS); //for display with CS pin
+
 //or you can use software SPI on all available pins (slow)
 Arduino_ST7789 tft = Arduino_ST7789(TFT_DC, TFT_RST, TFT_MOSI, TFT_SCLK); //for display without CS pin
 //Arduino_ST7789 tft = Arduino_ST7789(TFT_DC, TFT_RST, TFT_MOSI, TFT_SCLK, TFT_CS); //for display with CS pin
